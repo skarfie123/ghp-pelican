@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - run: pip install "pelican[markdown]"
       - name: Generate Pelican
         run: make publish
       - name: Upload artifact
