@@ -25,6 +25,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v3
       - run: pip install "pelican[markdown]"
       - name: Generate Pelican
