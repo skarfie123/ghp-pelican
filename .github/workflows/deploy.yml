@@ -20,8 +20,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ steps.pages.outputs.base_path }}"
-      - run: echo "${{ steps.deployment.outputs.page_url }}"
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Setup Pages
@@ -29,13 +27,11 @@ jobs:
         uses: actions/configure-pages@v3
       - run: pip install "pelican[markdown]"
       - name: Generate Pelican
-        run: make publish
+        run: pelican content -o output -s publishconf.py -e SITEURL='"${{ steps.pages.outputs.base_url }}"'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: output/
-      - run: echo "${{ steps.pages.outputs.base_path }}"
-      - run: echo "${{ steps.deployment.outputs.page_url }}"
 
   deploy:
     needs: build
@@ -52,10 +48,6 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ steps.pages.outputs.base_path }}"
-      - run: echo "${{ steps.deployment.outputs.page_url }}"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      - run: echo "${{ steps.pages.outputs.base_path }}"
-      - run: echo "${{ steps.deployment.outputs.page_url }}"
