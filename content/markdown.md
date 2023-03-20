@@ -54,6 +54,21 @@ if __name__ == "__main__":
     main()
 ```
 
+    #!/usr/bin/python
+    print("Hello World!")
+
+but
+
+    :::python
+    print("The triple-colon syntax will *not* show line numbers.")
+
+highlight
+
+    :::python hl_lines="1 3"
+    # This line is emphasized
+    # This line isn't
+    # This line is emphasized
+
 * * *
 
 ***
@@ -92,3 +107,16 @@ __double underscores__
 
 ![Alt text](./path/to/rss.png "Optional title")
 ![Alt text2](./images/rss.png "Optional title2")
+
+Footnotes[^1] have a label[^@#$%] and the footnote's content.
+
+[^1]: This is a footnote content.
+[^@#$%]:
+    A footnote on the label: "@#$%".
+
+    It is still a number though.
+
+| First Header | Second Header |
+| ------------ | ------------- |
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
