@@ -1,5 +1,8 @@
 Title: Markdown
 Date: 2023-03-19
+Modified: 2023-06-01
+
+For the source of this page, see: [GitHub](https://github.com/skarfie123/ghp-pelican/blob/master/content/markdown.md)
 
 # H1
 
