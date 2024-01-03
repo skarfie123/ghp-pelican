@@ -25,7 +25,7 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-      - run: pip install "pelican[markdown]"
+      - run: pip install -r requirements.txt
       - name: Generate Pelican
         run: pelican content -o output -s publishconf.py -e SITEURL='"${{ steps.pages.outputs.base_url }}"'
       - name: Upload artifact
